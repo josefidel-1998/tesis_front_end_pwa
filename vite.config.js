@@ -47,12 +47,6 @@ export default defineConfig({
             density: "2.0"
            },
            {
-            src: "../src/dist/android-icon-144x144.png",
-            sizes: "144x144",
-            type: "image\/png",
-            density: "3.0"
-           },
-           {
             src: "../src/dist/android-icon-192x192.png",
             sizes: "192x192",
             type: "image\/png",
