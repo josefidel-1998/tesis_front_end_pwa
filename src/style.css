@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.fondoNaranja{ background-color: #FF4D01; }
+
+.naranja{ color: #FF4D01; }
+
+.fondoAzul{ background-color: #0142FE;}
+
+a{ text-decoration: none; }
+
+h1,h2,h3,h4,h5,p{ font-family: 'Roboto', sans-serif; }
+
+ul li{
+    list-style: none;
+}
+
+ol, ul {
+    padding-left: 0%!important;
+}
+
+.link{
+    background-color: #FF4D01;
+    color: white;
+    padding-block: 0.7rem;
+    padding-inline: 1.2rem;
+    border-radius: 12rem; 
+    font-weight: bold;
+}
