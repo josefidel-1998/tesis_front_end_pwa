@@ -53,6 +53,9 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.seccion__inicio{
+  min-height: 113vh;
+}
 #bienvenida {
   padding: 120px 20px 0px;
   background-color: #0142fe;
