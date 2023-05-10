@@ -16,7 +16,7 @@ export default defineConfig({
           name:"Biufort",
           short_name:"Biufort",
           display:"standalone",
-          background_color:"#0d6efd",
+          background_color:"#FFFFFF",
           lang:"es",
           scope:"/",
           description:"Pwa Biufort",
