@@ -87,11 +87,11 @@ let errorUsuario = ref("");
 let errorPassword = ref("");
 
 let show = ref(false);
-
+/*
 function validar() {
   validarNombre();
   validarPassword();
-}
+}*/
 
 function validarNombre() {
   if (usuario.value == "" || usuario.value.length == 0) {
@@ -115,11 +115,14 @@ function logearse(datos) {
   let password = datos.target.password.value;
   let email = datos.target.email.value;
   if(password == ""){
-    validarNombre();
+      validarNombre();
+
   } else if(email == ""){
-    validarPassword();
+      validarPassword();
+
   } else if(email == "" && password == ""){
-      validar();
+      validarNombre();
+      validarPassword();
   }else{
     login(email, password)
     .then(datos => {
