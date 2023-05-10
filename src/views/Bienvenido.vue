@@ -114,9 +114,15 @@ function validarPassword() {
 function logearse(datos) {
   let password = datos.target.password.value;
   let email = datos.target.email.value;
-
-  login(email, password)
-    .then((datos) => {
+  if(password == ""){
+    validarNombre();
+  } else if(email == ""){
+    validarPassword();
+  } else if(email == "" && password == ""){
+      validar();
+  }else{
+    login(email, password)
+    .then(datos => {
       let id = datos.usuario._id;
       let token = datos.token;
 
@@ -129,6 +135,8 @@ function logearse(datos) {
       router.push({ path: `/perfil` });
     })
     .catch((e) => console.error(e.message));
+  }
+
 }
 
 onMounted(() => {
