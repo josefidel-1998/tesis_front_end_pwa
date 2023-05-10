@@ -126,7 +126,7 @@ function logearse(datos) {
   }else{
     login(email, password)
     .then(datos => {
-      //let id = datos._id;
+      let id = datos.usuario._id;
       let token = datos.token;
 
       console.log(datos);
