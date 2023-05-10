@@ -95,7 +95,7 @@ function validar() {
 
 function validarEmail() {
   if (email.value == "" || email.value.length == 0) {
-    errorEmail.value = "Coloca tu nombre";
+    errorEmail.value = "Coloca tu email";
   } else if (email.value.length < 4) {
     errorEmail.value = "Debe poner al menos 4 caracteres";
   } else {
