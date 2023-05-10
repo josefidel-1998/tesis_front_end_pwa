@@ -16,11 +16,11 @@ export default defineConfig({
           name:"Biufort",
           short_name:"Biufort",
           display:"standalone",
-          background_color:"#ff4d01",
+          background_color:"#0d6efd",
           lang:"es",
           scope:"/",
           description:"Pwa Biufort",
-          theme_color:"#0d6efd",
+          theme_color:"#ff4d01",
           icons: [
            {
             src: "/icons/android-icon-36x36.png",
