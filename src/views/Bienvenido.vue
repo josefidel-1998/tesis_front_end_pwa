@@ -17,14 +17,14 @@
             name="email"
             id="email"
             placeholder="Email"
-            @keypress="validarNombre"
-            @change="validarNombre"
-            v-model="usuario"
+            @keypress="validarEmail"
+            @change="validarEmail"
+            v-model="email"
           />
           <i class="bi bi-eye show-icon text-white"></i>
         </div>
         <span class="d-block text-center text-danger mb-4">{{
-          errorUsuario
+          errorEmail
         }}</span>
         <div
           class="col mb-4 inputs-controls d-flex items-center justify-content-center"
@@ -80,26 +80,26 @@ const router = useRouter();
 
 let contador = ref(0);
 let intervalo = ref(() => {})
-const usuario = ref("");
+const email = ref("");
 const password = ref("");
 
-let errorUsuario = ref("");
+let errorEmail = ref("");
 let errorPassword = ref("");
 
 let show = ref(false);
 /*
 function validar() {
-  validarNombre();
+  validarEmail();
   validarPassword();
 }*/
 
-function validarNombre() {
-  if (usuario.value == "" || usuario.value.length == 0) {
-    errorUsuario.value = "Coloca tu nombre";
-  } else if (usuario.value.length < 4) {
-    errorUsuario.value = "Debe poner al menos 4 caracteres";
+function validarEmail() {
+  if (email.value == "" || email.value.length == 0) {
+    errorEmail.value = "Coloca tu nombre";
+  } else if (email.value.length < 4) {
+    errorEmail.value = "Debe poner al menos 4 caracteres";
   } else {
-    errorUsuario.value = "";
+    errorEmail.value = "";
   }
 }
 function validarPassword() {
@@ -115,18 +115,18 @@ function logearse(datos) {
   let password = datos.target.password.value;
   let email = datos.target.email.value;
   if(password == ""){
-      validarNombre();
+      validarEmail();
 
   } else if(email == ""){
       validarPassword();
 
   } else if(email == "" && password == ""){
-      validarNombre();
+      validarEmail();
       validarPassword();
   }else{
     login(email, password)
     .then(datos => {
-      let id = datos.usuario._id;
+      let id = datos.email._id;
       let token = datos.token;
 
       console.log(datos);
