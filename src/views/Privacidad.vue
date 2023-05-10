@@ -20,7 +20,9 @@ import Footer from "../layout/Footer.vue";
 import Nav from "../layout/Nav.vue";
 </script>
 <style scoped>
-
+.section_privacidad{
+  padding-block: 3rem;
+}
 .section_privacidad p {
   margin-bottom: 0%;
   width: 75%;

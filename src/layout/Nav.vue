@@ -3,10 +3,12 @@
     <header class="shadow-sm header-principal">
     <nav class="Nav Nav-expand-lg">
       <div class="container-fluid">
-        <h1 class="naranja">{{ $route.name }} </h1>
-        <button type="button" data-bs-toggle="collapse" data-bs-target="#NavNav" aria-controls="NavNav" aria-expanded="false" aria-label="Toggle navigation" id="hamburguesa">
-          <i class="bi bi-list fs-3 naranja"></i>
-        </button>
+        <div class="menu__h1">
+          <h1 class="naranja">{{ $route.name }} </h1>
+          <button type="button" data-bs-toggle="collapse" data-bs-target="#NavNav" aria-controls="NavNav" aria-expanded="false" aria-label="Toggle navigation" id="hamburguesa">
+            <i class="bi bi-list fs-3 naranja"></i>
+          </button>
+        </div>
         <div class="collapse Nav-collapse" id="NavNav">
         <ul class="nav-bar mb-5 menu">
           <li>
@@ -46,24 +48,28 @@
   }
 </script>
 
-<style scope>
+<style scoped>
   .header-principal{
     background:white;
     width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-direction: row;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 10px 0 10px;
+    padding: 10px 0rem 10px;
     z-index: 1;
   }
   .header-principal h1{
-    margin: 5px 25px 5px;
-    font-size: 1.3em;
+    margin: 6px 28px 5px;
+    font-size: 1rem;
+    font-weight: bold;
   }
-
+.menu__h1{
+  display: flex;
+  /*flex-direction: row-reverse;*/
+}
   .header-principal nav{
     transition: all 0.4s ease-in-out;
     width: 100%;
@@ -72,9 +78,15 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+  /*
   .menu__burger{
     position:fixed;
-    left: 5%;
+    right: 5%;
+  }*/
+  #hamburguesa{
+    position:fixed;
+    right: 5%;
+    font-size: 1.4rem;
   }
   .header-principal button{
     background-color: transparent;
@@ -118,10 +130,6 @@
 
 .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
     --bs-gutter-x: 0!important;
-}
-
-#hamburguesa {
-    margin: 0 20px 5px auto;
 }
 
 .Nav {
