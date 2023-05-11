@@ -47,10 +47,7 @@
           errorPassword
         }}</span>
         <button type="submit" class="boton-naranja">
-          {{ bandera ? "" : "Ingresar" }}
-          <div v-if="bandera" class="spinner-border text-light" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
+          Ingresar
         </button>
       </fieldset>
     </form>
@@ -125,10 +122,6 @@ function logearse(datos) {
   }else{
     login(email, password)
     .then(datos => {
-      bandera.value = true;
-      if(datos){
-        bandera.value = false;
-      }
       let id = datos.usuario._id;
       let token = datos.token;
 
