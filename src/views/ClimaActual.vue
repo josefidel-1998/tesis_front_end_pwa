@@ -1,9 +1,10 @@
 <template>
-  <section>
+  <Nav />
+  <span class="lds-dual-ring" v-if="bandera"></span>
+  <section v-else>
     <Modal />
-    <Nav />
-    <span class="lds-dual-ring" v-if="bandera"></span>
-    <section v-else class="portada relative">
+    
+    <article class="portada relative">
       <div>
         <h2 class="fs-5 pt-4">{{ nombreLocal }}</h2>
         <p id="temperatura-valor">{{ datosClima.temp }} °C</p>
@@ -19,9 +20,9 @@
       <div>
         <img id="icono-animado" :src="datosClima.icon" :alt="datosClima.temp" />
       </div>
-    </section>
+    </article>
 
-    <section
+    <article
       id="redondito"
       class="container-fluid d-flex flex-row justify-content-center shadow bg-white"
     >
@@ -30,9 +31,7 @@
         <p class="fw-semibold text-secondary">
           Viento <br />
           <span v-if="bandera"></span>
-          <span v-else class="fs-4 fw-normal">{{
-            parseInt(datosClima.speed * 3.6)
-          }}</span>
+          <span v-else class="fs-4 fw-normal">{{parseInt(datosClima.speed * 3.6)}}</span>
           km/h
         </p>
       </div>
@@ -54,9 +53,9 @@
           >%
         </p>
       </div>
-    </section>
+    </article>
 
-    <section class="shadow" id="redondito2">
+    <article class="shadow" id="redondito2">
       <figure v-for="dias in diasPosteriores" :key="dias.lenght">
         <img :src="dias.icon" />
         <figcaption class="text-center">
@@ -64,10 +63,10 @@
           <p class="fw-semibold">{{ dias.temp }} °C</p>
         </figcaption>
       </figure>
-    </section>
+    </article>
     <FaseLunar />
-    <Footer />
   </section>
+    <Footer />
 </template>
 
 <script setup>
@@ -201,6 +200,7 @@ onMounted(() => {
     )
       .then((r) => r.json())
       .then((datos) => {
+        bandera.value = false;
         console.log(datos)
         nombreLocal.value = datos[0].name;
       });
@@ -274,6 +274,7 @@ section {
   width: 80px;
   height: 80px;
   margin: auto;
+  margin-block-start: 8rem;
 }
 
 .lds-dual-ring:after {
@@ -286,6 +287,16 @@ section {
   border: 6px solid rgb(0, 73, 109);
   border-color: rgb(3, 77, 114) transparent rgb(0, 76, 114) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #icono-animado {
@@ -347,15 +358,5 @@ section {
 
 #redondito2 figure:last-child {
   border-right-width: 0px;
-}
-
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>

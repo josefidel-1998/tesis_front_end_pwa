@@ -3,9 +3,12 @@
     <Modal />
     <Nav />
     <div id="bienvenida">
-      <h2>
-        ¡Bienvenido/a <span class="separador">{{ nombre }}!</span>
-      </h2>
+        <div v-if="show" class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <h2 v-else>
+            ¡Bienvenido/a <span class="separador">{{ nombre }}!</span>
+        </h2>
       <p>¿Estás listo para buscar tu nueva captura?</p>
       <div class="container-fluid justify-content-center shadow bg-white contenedor">
         <h3 class="titulo-naranja">Información importante</h3>
@@ -41,14 +44,18 @@ import Footer from "../layout/Footer.vue";
 import Modal from "../components/Modal.vue";
 import Nav from "../layout/Nav.vue";
 const nombre = ref("");
+let show = ref(false);
 onMounted(() => {
+  show.value = true;
   const id = JSON.parse(localStorage.getItem("id"));
 
   fetch(`https://server02-tesis.vercel.app/api/usuarios/${id}`)
-    .then((datos) => datos.json())
-    .then((data) => {
+    .then(r => r.json())
+    .then(data => {
       nombre.value = data.nombre;
+      show.value = false;
     });
+
 });
 </script>
 

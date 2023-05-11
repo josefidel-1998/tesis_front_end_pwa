@@ -1,5 +1,6 @@
 <template>
-  <section id="editar-perfil">
+  <span class="lds-dual-ring" v-if="bandera"></span>
+  <section v-else id="editar-perfil">
     <Modal />
     <Nav />
     <form
@@ -129,6 +130,7 @@ const peces = ref([]);
 let router = useRouter();
 let validacionNombre = ref("");
 let verificar = ref(false);
+let bandera = ref(false);
 let id = JSON.parse(localStorage.getItem("id"));
 
 function validarNombre() {
@@ -178,6 +180,8 @@ const editarPerfil = () => {
 
 onMounted(() => {
 
+  bandera.value = true;
+
   fetch(`https://server4-sand.vercel.app/api/usuarios/${id}`, {
     method: "GET",
     headers: {
@@ -191,12 +195,14 @@ onMounted(() => {
       agua.value = data.preferencias.agua;
       nivel.value = data.preferencias.nivel;
       pez.value = data.preferencias.pez;
+      bandera.value = false;
     });
 
   fetch("https://server01-tesis.vercel.app/api/peces")
     .then((response) => response.json())
     .then((data) => {
       peces.value = data;
+      bandera.value = false;
     });
 });
 </script>
@@ -256,5 +262,33 @@ onMounted(() => {
 #avanzado,
 #experto {
   margin: 0 10px;
+}
+.lds-dual-ring {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-block-start: 8rem;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(0, 73, 109);
+  border-color: rgb(3, 77, 114) transparent rgb(0, 76, 114) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

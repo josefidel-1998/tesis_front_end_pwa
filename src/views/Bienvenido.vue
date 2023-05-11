@@ -47,7 +47,10 @@
           errorPassword
         }}</span>
         <button type="submit" class="boton-naranja">
-          Ingresar
+          {{ bandera ? "" : "Ingresar" }}
+          <div v-if="bandera" class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </button>
       </fieldset>
     </form>
@@ -87,27 +90,21 @@ let errorEmail = ref("");
 let errorPassword = ref("");
 
 let show = ref(false);
-/*
-function validar() {
-  validarEmail();
-  validarPassword();
-}*/
+
+let bandera = ref(false)
 
 function validarEmail() {
   if (email.value == "" || email.value.length == 0) {
     errorEmail.value = "Coloca tu email";
-  } else if (email.value.length < 4) {
-    errorEmail.value = "Debe poner al menos 4 caracteres";
-  } else {
+  }
+  else {
     errorEmail.value = "";
   }
 }
 function validarPassword() {
   if (password.value == "" || password.value.length == 0) {
     errorPassword.value = "Coloca tu contraseña";
-  } else if (password.value.length < 4) {
-    errorPassword.value = "La contraseña tiene que tener mas de 6 caracteres";
-  } else {
+   } else {
     errorPassword.value = "";
   }
 }
@@ -126,6 +123,10 @@ function logearse(datos) {
   }else{
     login(email, password)
     .then(datos => {
+      bandera.value = true;
+      if(datos){
+        bandera.value = false;
+      }
       let id = datos.usuario._id;
       let token = datos.token;
 
@@ -137,13 +138,17 @@ function logearse(datos) {
 
       router.push({ path: `/perfil` });
     })
-    .catch((e) => console.error(e.message));
+    .catch(e => {
+        if(e){
+          errorPassword.value = "Contraseña incorrecta"
+        }
+    });
   }
 
 }
 
 onMounted(() => {
-  console.log(pinia.banderaSesion)
+  bandera.value = true
   if(pinia.banderaSesion){
          intervalo.value = setInterval(() => {
           contador.value++;
@@ -178,6 +183,9 @@ watch(contador, numero => {
   text-align: center;
   outline: none;
   border: none;
+}
+.boton-naranja:active{
+  background-color: #ff4d01da;
 }
 
 .inputs-controls .ingreso-form {

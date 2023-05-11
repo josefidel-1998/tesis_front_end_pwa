@@ -12,29 +12,37 @@
         </template>
       </div>
       <div class="datos__div">
+        <div v-if="bandera" class="spinner-border text-light spinner1" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
         <h2 class="text-center">{{ nombre }}</h2>
         <ul>
-          <li>
-            <p><i class="bi bi-envelope m-2 naranja"></i> {{ email }}</p>
-          </li>
-          <li>
-            <p>
-              <i class="bi bi-person-up m-2 naranja"></i>Nivel:
-              {{ preferencias.nivel }}
-            </p>
-          </li>
-          <li>
-            <p>
-              <i class="bi bi-droplet m-2 naranja"></i>Tipo de agua:
-              {{ preferencias.agua }}
-            </p>
-          </li>
-          <li>
-            <p>
-              <i class="bi bi-pin m-2 naranja"></i>Próximo objetivo:
-              {{ preferencias.pez }}
-            </p>
-          </li>
+          <div v-if="bandera" class="spinner-border naranja spinner1" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div v-else>
+            <li>
+              <p><i class="bi bi-envelope m-2 naranja"></i> {{ email }}</p>
+            </li>
+            <li >
+              <p>
+                <i class="bi bi-person-up m-2 naranja"></i>Nivel:
+                {{ preferencias.nivel }}
+              </p>
+            </li>
+            <li >
+              <p>
+                <i class="bi bi-droplet m-2 naranja"></i>Tipo de agua:
+                {{ preferencias.agua }}
+              </p>
+            </li>
+            <li >
+              <p>
+                <i class="bi bi-pin m-2 naranja"></i>Próximo objetivo:
+                {{ preferencias.pez }}
+              </p>
+            </li>
+          </div>
         </ul>
         <span
           class="text-center d-block py-1 px-3 fs-6 text-success w-50 mx-auto"
@@ -70,10 +78,13 @@ export default{
       preferencias: {},
       imagen: "",
       contador: 0,
+      bandera: false,
       intervalo: () => {}
     };
   },
   mounted() {
+
+    this.bandera = true;
 
     const id = JSON.parse(localStorage.getItem("id"));
 
@@ -83,8 +94,8 @@ export default{
         this.preferencias = data.preferencias;
         this.nombre = data.nombre;
         this.email = data.email;
+        this.bandera = false;
       });
-
       if(this.pinia.bandera){
          this.intervalo = setInterval(() => {
           this.contador++;
@@ -155,5 +166,11 @@ export default{
 }
 .datos__div{
   min-height: 80vh;
+}
+.spinner1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 </style>
