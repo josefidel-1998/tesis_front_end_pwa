@@ -148,7 +148,6 @@ function logearse(datos) {
 }
 
 onMounted(() => {
-  bandera.value = true
   if(pinia.banderaSesion){
          intervalo.value = setInterval(() => {
           contador.value++;
