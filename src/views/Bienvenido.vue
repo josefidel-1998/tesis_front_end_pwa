@@ -96,6 +96,8 @@ let bandera = ref(false)
 function validarEmail() {
   if (email.value == "" || email.value.length == 0) {
     errorEmail.value = "Coloca tu email";
+  }else if(email.value.length < 6){
+    errorEmail.value = "El email tiene que tener mas de 6 carácteres"
   }
   else {
     errorEmail.value = "";
@@ -148,6 +150,7 @@ function logearse(datos) {
 }
 
 onMounted(() => {
+
   if(pinia.banderaSesion){
          intervalo.value = setInterval(() => {
           contador.value++;
