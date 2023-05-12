@@ -26,6 +26,16 @@ import Modal from "../components/Modal.vue";
 </script>
 <style scope>
 
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    --bs-gutter-x: 0!important;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .tutorial_p {
   width: 75%;
   margin: auto;
@@ -55,10 +65,6 @@ p {
   margin: 0 auto;
 }
 
-header {
-  padding: 10px 20px;
-  box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
-}
 #atras {
   color: #ff4d00;
 }

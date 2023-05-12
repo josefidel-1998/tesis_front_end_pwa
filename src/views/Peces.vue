@@ -63,6 +63,7 @@ function filtrarPeces() {
 #peces_section {
   margin-block-start: 6rem;
   margin-block-end: 8rem;
+  padding: 0%;
 }
 
 .input__form {
@@ -93,8 +94,8 @@ function filtrarPeces() {
 }
 
 .peces article figure img {
-  max-width: 310px;
-  height: 240px;
+  max-width: 400px;
+  height: 250px;
   object-fit: cover;
   border-radius: 20px;
   margin-top: 10px;

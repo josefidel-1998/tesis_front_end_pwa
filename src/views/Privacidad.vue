@@ -21,7 +21,7 @@ import Nav from "../layout/Nav.vue";
 </script>
 <style scoped>
 .section_privacidad{
-  padding-block: 3rem;
+  padding: 2rem 0;
 }
 .section_privacidad p {
   margin-bottom: 0%;

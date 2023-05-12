@@ -3,19 +3,19 @@
     <Nav />
     <section id="perfil">
       <Modal />
-      <div>
+      <div id="perfil_fondo">
         <template v-if="imagen">
           <img :src="'/src/assets/imgSmall/' + imagen" alt="foto_perfil" />
         </template>
         <template v-else>
           <img class="naranja" src="/src/assets/usuario.png" alt="usuario" />
         </template>
-      </div>
-      <div class="datos__div">
         <div v-if="bandera" class="spinner-border text-light spinner1" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
         <h2 class="text-center">{{ nombre }}</h2>
+      </div>
+      <div class="datos__div">
         <ul>
           <div v-if="bandera" class="spinner-border naranja spinner1" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -118,15 +118,27 @@ export default{
 
 <style scoped>
 #perfil {
+  padding-top: 20px;
+}
+
+#perfil_fondo {
   background: url(/src/assets/fonde_azul.png);
   background-position: top center;
   background-repeat: no-repeat;
-  padding-top: 20px;
-  background-size: auto;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  margin: 0% auto!important;
+  display: inline-block!important;
+}
+
+#perfil_fondo img {
+  margin: 12% auto 0;
 }
 
 #perfil h2 {
   color: #fff;
+  margin-top: 20px;
 }
 
 #perfil img {
@@ -139,7 +151,7 @@ export default{
 
 #perfil ul,
 #perfil ol {
-  margin: 90px 8.5% 20px;
+  margin: 50px 8.5% 20px;
   padding: 0% !important;
 }
 
@@ -158,7 +170,7 @@ export default{
 #perfil div:nth-child(2) {
   display: flex;
   justify-content: center;
-  margin: 25% 0 15px;
+  margin: 13% 0 15px;
 }
 
 #perfil i {

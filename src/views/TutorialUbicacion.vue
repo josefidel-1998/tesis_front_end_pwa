@@ -55,10 +55,6 @@ import Modal from "../components/Modal.vue";
   margin-top: 20px;
 }
 
-header {
-  padding: 10px;
-  box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
-}
 #atras {
   color: #ff4d00;
 }

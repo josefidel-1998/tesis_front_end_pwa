@@ -135,11 +135,11 @@ let id = JSON.parse(localStorage.getItem("id"));
 
 function validarNombre() {
   if (nombre.value == "") {
-    validacionNombre.value = "Debes de colocar tu nombre";
+    validacionNombre.value = "Debés de colocar tu nombre";
     verificar.value = false;
     console.log(verificar.value);
   } else if (nombre.value.length < 4) {
-    validacionNombre.value = "Tu nombre debe de tener al menos 4 caracteres";
+    validacionNombre.value = "Tu nombre tiene que tener al menos 4 carácteres";
     verificar.value = false;
     console.log(verificar.value);
   } else {

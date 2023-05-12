@@ -121,9 +121,9 @@ function validar() {
 
 function validarNombre() {
   if (nombre.value == "" || nombre.value.length == 0) {
-    errornombre.value = "Coloca tu nombre";
+    errornombre.value = "Es necesario ingresar tu nombre";
   } else if (nombre.value.length < 4) {
-    errornombre.value = "Debe poner al menos 4 carácteres";
+    errornombre.value = "Debés poner al menos 4 carácteres";
   } else {
     errornombre.value = "";
   }
@@ -131,9 +131,9 @@ function validarNombre() {
 
 function validarPassword() {
   if (password.value == "" || password.value.length == 0) {
-    errorPassword.value = "Coloca tu contraseña";
+    errorPassword.value = "Es necesario ingresar una contraseña";
   } else if (password.value.length < 6) {
-    errorPassword.value = "La contraseña tiene que tener mas de 6 carácteres";
+    errorPassword.value = "La contraseña tiene que tener más de 6 carácteres";
   } else {
     errorPassword.value = "";
   }
@@ -141,11 +141,11 @@ function validarPassword() {
 
 function validarMail() {
   if (email.value == "" || email.value.length == 0) {
-    errorMail.value = "Coloca tu email";
+    errorMail.value = "Es necesario ingresar un email";
   }else if(email.value.length < 6){
-    errorMail.value = "El email tiene que tener mas de 6 carácteres"
+    errorMail.value = "El email tiene que tener más de 6 carácteres"
   }
-   else {
+  else {
     errorMail.value = "";
   }
 }

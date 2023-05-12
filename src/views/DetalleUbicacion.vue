@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="detalle_lugares_section">
     <Modal />
     <header class="col mb-6 d-flex items-left justify-content-left">
       <router-link id="atras" to="/lugares"
@@ -49,23 +49,23 @@ export default {
   min-height: 50vh;
 }
 
-a {
+#detalle_lugares_section a {
   text-decoration: none;
 
   color: #ff4d01;
 }
 
-a:focus {
+#detalle_lugares_section a:focus {
   color: white !important;
   background-color: #0449f4 !important;
 }
 
-li {
+#detalle_lugares_section li {
   padding-left: 20px !important;
   padding-top: 5px !important;
 }
 
-button {
+#detalle_lugares_section button {
   color: white;
   background-color: #0449f4 !important;
   padding-right: 2vw;
@@ -82,12 +82,11 @@ button {
   padding-right: 2vw;
 }
 
-section {
-  padding-left: 2vw;
-  padding-right: 2vw;
+#detalle_lugares_section {
+  padding: 0%;
 }
 
-header {
+#detalle_lugares_section header {
   padding: 10px;
   box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
   z-index: 1;
@@ -97,7 +96,7 @@ header {
   color: #ff4d00;
 }
 
-h1 {
+#detalle_lugares_section h1 {
   margin: 0 10px;
   color: #ff4d00;
   padding: 8px 0;

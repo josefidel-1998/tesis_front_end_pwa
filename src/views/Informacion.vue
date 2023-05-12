@@ -47,6 +47,7 @@ import Footer from "../layout/Footer.vue";
 
 .section-informacion {
   margin-block-start: 5rem;
+  padding: 0%;
 }
 
 .navegacion {
@@ -75,7 +76,7 @@ import Footer from "../layout/Footer.vue";
 
 .item-info {
   padding: 1px 1rem;
-  width: 94vw;
+  width: 100%;
   box-shadow: 0px 0px 5px -3px rgba(0, 0, 0, 0.33);
   -webkit-box-shadow: 0px 0px 5px -3px rgb(0 0 0 / 33%);
   -moz-box-shadow: 0px 0px 5px -3px rgba(0, 0, 0, 0.33);

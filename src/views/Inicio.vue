@@ -13,14 +13,13 @@
       <div class="container-fluid justify-content-center shadow bg-white contenedor">
         <h3 class="titulo-naranja">Información importante</h3>
         <p>
-          Para poder pescar de forma legal, debés sacar un permiso en el
-          siguiente link:
+          Para poder pescar de forma legal, necesitás obtener un permiso en el siguiente link:
         </p>
         <a
           href="https://mi.mda.gba.gob.ar/pesca/licencia/validacion"
           target="_blank"
           class="boton-naranja"
-          >Sacar licencia de pesca</a
+          >Conseguir licencia de pesca</a
         >
       </div>
     </div>

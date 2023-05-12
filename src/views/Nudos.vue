@@ -1,5 +1,5 @@
 <template>
-  <section class="container-fluid">
+  <section class="container-fluid" id="section_nudos">
     <Modal />
     <Nav />
     <ul class="nudos">
@@ -41,6 +41,10 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+#section_nudos {
+  padding: 0%;
+}
 .nudos {
   display: flex;
   flex-direction: column;

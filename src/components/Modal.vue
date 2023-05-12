@@ -1,6 +1,6 @@
 <template>
     <div class="modal">
-      <p>Esta app esta diseñada para dar una mejor experiencia en teléfonos &#128512; &#128241;</p>
+      <p>Biufort esta diseñada para dar una mejor experiencia en teléfonos &#128512; &#128241;</p>
     </div>
 </template>
 

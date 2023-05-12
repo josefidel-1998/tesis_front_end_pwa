@@ -9,10 +9,10 @@
     </div>
     <div class="row m-auto mb-3">
       <img class="img mb-5 tutorial" src="../assets/encuesta3.png" />
-      <h3 class="text-center fs-1 fw-bold">Comenzá la búsqueda</h3>
+      <h3 class="text-center fs-1 fw-bold">Comenzá tu búsqueda</h3>
       <p class="text-center mt-4 tutorial_p">
         ¡Comenzá la búsqueda de las especies que querés pescar o los campings
-        que querés visitar!
+        que quieras visitar!
       </p>
       <p class="text-center mt-4 tutorial_p">
         En la sección de Mapa o Información podés encontrar un buscador e
@@ -56,10 +56,6 @@ import Modal from "../components/Modal.vue";
   box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
 }
 
-header {
-  padding: 10px;
-  box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
-}
 #atras {
   color: #ff4d00;
 }

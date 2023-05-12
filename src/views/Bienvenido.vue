@@ -92,21 +92,28 @@ let bandera = ref(false)
 
 function validarEmail() {
   if (email.value == "" || email.value.length == 0) {
-    errorEmail.value = "Coloca tu email";
+    errorEmail.value = "Es necesario ingresar un email";
   }else if(email.value.length < 6){
-    errorEmail.value = "El email tiene que tener mas de 6 carácteres"
+    errorEmail.value = "El email tiene que tener más de 6 carácteres"
   }
   else {
     errorEmail.value = "";
   }
 }
+
+
 function validarPassword() {
   if (password.value == "" || password.value.length == 0) {
-    errorPassword.value = "Coloca tu contraseña";
-   } else {
+    errorPassword.value = "Es necesario ingresar tu contraseña";
+  } else if (password.value.length < 6) {
+    errorPassword.value = "La contraseña tiene que tener más de 6 carácteres";
+  } else {
     errorPassword.value = "";
   }
 }
+
+
+
 function logearse(datos) {
   let password = datos.target.password.value;
   let email = datos.target.email.value;

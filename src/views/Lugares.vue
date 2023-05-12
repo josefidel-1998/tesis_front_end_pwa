@@ -1,5 +1,5 @@
 <template>
-  <section class="container-fluid">
+  <section class="container-fluid" id="section_lugares">
     <div class="container-fluid mt-4">
       <Modal />
       <Nav />
@@ -195,6 +195,10 @@ header {
   border: 6px solid rgb(0, 73, 109);
   border-color: rgb(3, 77, 114) transparent rgb(0, 76, 114) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
+}
+
+#section_lugares {
+  padding: 0%;
 }
 
 @keyframes lds-dual-ring {
