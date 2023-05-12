@@ -57,6 +57,7 @@ console.log(nudo);
 
 #detalle_nudo {
   width: 90%;
+  min-height: 100vh;
   margin: auto;
   padding: 0%;
 }
