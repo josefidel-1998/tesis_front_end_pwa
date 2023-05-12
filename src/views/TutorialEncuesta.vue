@@ -1,5 +1,5 @@
 <template>
-  <section class="container w-100">
+  <section class="container w-100" id="tutorial_encuesta">
     <Modal />
     <div class="col mb-6 d-flex items-left justify-content-left header-tutorial">
       <h1 class="titulo-header">Tutorial 1/3</h1>
@@ -25,6 +25,15 @@
 import Modal from "../components/Modal.vue";
 </script>
 <style scope>
+
+#tutorial_encuesta {
+  padding: 0%;
+  margin: 0%;
+}
+
+.container-sm, .container {
+    max-width: 700px!important; 
+  }
 
 .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
     --bs-gutter-x: 0!important;
@@ -81,25 +90,4 @@ p {
 }
 
 
-.modal {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-}
-.modal h2 {
-  width: 50vw;
-  font-size: 3rem;
-  text-align: center;
-}
-
-@media screen and (max-width: 450px) {
-  .modal {
-    display: none;
-  }
-}
 </style>

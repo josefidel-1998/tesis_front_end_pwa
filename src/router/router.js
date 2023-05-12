@@ -7,6 +7,11 @@ const routes = [
       component: () => import('../views/Bienvenido.vue'),
     },
     {
+      path: '/:pathMatch(.*)*',
+      name: '404',
+      component: () => import('../components/404.vue'),
+    },
+    {
       path: '/inicio',
       name: "Inicio",
       component: () => import('../views/Inicio.vue'),

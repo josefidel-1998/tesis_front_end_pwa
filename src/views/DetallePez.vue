@@ -1,7 +1,7 @@
 <template>
   <section id="detalle-pez">
     <Modal />
-    <header class="col mb-6 d-flex items-left justify-content-left">
+    <header class="col mb-6 d-flex items-left justify-content-left" id="header_peces">
       <router-link id="atras" to="/peces"
         ><i class="bi bi-arrow-left-short fs-1 naranja"></i
       ></router-link>
@@ -74,7 +74,7 @@ const pez = ref(JSON.parse(router.params.pez));
 
 #carta_pez {
   width: 90%;
-  margin: auto;
+  margin: 2em auto 5em;
 }
 
 #detalle-pez button {
@@ -130,8 +130,15 @@ const pez = ref(JSON.parse(router.params.pez));
 }
 
 #detalle-pez header {
-  padding: 10px;
   box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
+  background:white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 15px 10px;
   z-index: 1;
 }
 

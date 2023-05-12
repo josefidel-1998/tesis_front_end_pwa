@@ -40,6 +40,7 @@ console.log(nudo);
 </script>
 
 <style scoped>
+
 .card {
   --bs-card-border-width: 0 !important;
 }
@@ -57,8 +58,7 @@ console.log(nudo);
 
 #detalle_nudo {
   width: 90%;
-  min-height: 100vh;
-  margin: auto;
+  margin: 4em auto 12em;
   padding: 0%;
 }
 
@@ -78,8 +78,15 @@ console.log(nudo);
 }
 
 .header-nudos {
-  padding: 10px;
   box-shadow: 5px 5px rgba(7, 7, 7, 0.03);
+  background:white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 15px 10px;
   z-index: 1;
 }
 

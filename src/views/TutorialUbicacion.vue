@@ -66,29 +66,6 @@ import Modal from "../components/Modal.vue";
   font-size: 1.3em;
 }
 
-
-.modal {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-}
-.modal h2 {
-  width: 50vw;
-  font-size: 3rem;
-  text-align: center;
-}
-
-@media screen and (max-width: 450px) {
-  .modal {
-    display: none;
-  }
-}
-
 .saltar {
   text-align: center;
   margin: 0 auto;
