@@ -97,8 +97,10 @@ function Registrarse() {
     email: email.value,
     password: password.value,
   };
-
-  return fetch("https://server02-tesis.vercel.app/api/usuarios", {
+  if(nombre.value == "" || password.value == "" || email.value == ""){
+    validar();
+  }else{
+    return fetch("https://server02-tesis.vercel.app/api/usuarios", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -111,6 +113,7 @@ function Registrarse() {
       router.push({ path: "/" });
     })
     .catch((e) => console.error(e.message));
+  }
 }
 
 function validar() {
